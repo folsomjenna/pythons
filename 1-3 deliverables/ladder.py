@@ -12,9 +12,11 @@ def main():
     # This is an input
     height = eval(input("What is the height of the ladder? "))
     angle = eval(input("what is the angle of the ladder? "))
-    length = round(abs((height) / math.sin(angle)) , 2)
+    radians = math.pi / 180 * angle
+    length = round(abs((height) / math.sin(radians)) , 2)
+
 
     # This is an output
-    print("The lenght of the ladder is", length, ".")
+    print("The length of the ladder is", length, ".")
 
 main()    
