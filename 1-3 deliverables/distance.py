@@ -1,6 +1,6 @@
 # distance.py
 # Created on 12/11/18 by Jenna Folsom
-# A program that calculates the slope of a line through two (non-vertical) points entered by the user
+# A program that calculates the distance of two coordinates given by the user
 
 def main():
 
