@@ -9,8 +9,23 @@ def main():
     print ("This program plots the growth of a 10-year investment.")
 
     # Get principal and interest rate
-    principal = float(input("Enter the initial principal:"))
-    apr = float(input("Enter the annualized interest rate:"))
+    win = GraphWin("Input", 500, 300)
+    inputBox = Entry(Point(100, 40), 22)
+    inputBox.setTextColor("black")
+    inputBox.draw(win)
+    principal = inputBox.setText("Enter initial principal")
+    inputBox1 = Entry(Point(80, 70), 15)
+    inputBox1.setTextColor("black")
+    inputBox1.draw(win)
+    apr = inputBox1.setText("Enter APR")
+    win.getMouse()
+    principal = inputBox.getText()
+    apr = inputBox1.getText()
+    #principal = float(input("Enter the initial principal:"))
+    #apr = float(input("Enter the annualized interest rate:"))
+    win.getMouse()
+    apr = float(apr)
+    principal = float(principal)
 
     # Create a graphics window with labels on left edge
     win = GraphWin("Investment Growth Chart", 320, 240)
@@ -22,7 +37,7 @@ def main():
     Text(Point(20, 30), '10.0K').draw(win)
 
     # Draw bar for initial principal
-    height = principal * 0.02
+    height = float(principal) * 0.02
     bar = Rectangle (Point(40, 230), Point(65, 230-height))
     bar.setFill("green")
     bar.setWidth(2)
